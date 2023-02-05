@@ -5,6 +5,7 @@ def main():
        writer = csv.writer(file)
        for x in range(100):
            writer.writerows(["name", "Men's Average Salary", "Women's Average Salary"])
+    return writer
 
 if __name__ == "__main__":
     main()
