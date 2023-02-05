@@ -4,20 +4,20 @@ import axios from "axios";
 import './App.css';
 
 function App() {
-  const [profileData, setProfileData] = useState(null)
+  const [companyName, menSalary, womenSalary] = useState(null)
 
   
   function getData() {
-    
     axios({
       method: "GET",
       url:"http://localhost:5000/testing",
     })
     .then((response) => {
       const res =response.data
-      setProfileData({
-        profile_name: res.name,
-        about_me: res.about})
+      setCompanyName({
+        company_name: res.name,
+        men_salary: res.men,
+        women_salary: res.women})
     }).catch((error) => {
       if (error.response) {
         console.log(error.response)
@@ -30,8 +30,9 @@ function App() {
         {/* new line start*/}
         <p>To get your profile details: </p><button onClick={getData}>Click me</button>
         {profileData && <div>
-              <p>Profile name: {profileData.profile_name}</p>
-              <p>About me: {profileData.about_me}</p>
+              <p>Company name: {companyName.company_name}</p>
+              <p>Men's Average Salary: {companyName.men_salary}</p>
+              <p>Women's Average Salary: {companyName.women_salary}</p>
             </div>
         }
          {/* end of new line */}
