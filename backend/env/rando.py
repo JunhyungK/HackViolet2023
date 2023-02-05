@@ -16,8 +16,8 @@ def main():
         writer = csv.writer(file)
         writer.writerow(['Name', ' Mens Average Salary', ' Womens Average Salary'])
         newArr = parse_text()
-        for idx in range(100):
-            writer.writerow([newArr[idx], random.randint(150, 250), random.randint(100, 200)])
+        for idx in range(len(newArr)):
+            writer.writerow([str(newArr[idx]).lstrip("[']").rstrip("']"), random.randint(150, 250), random.randint(100, 200)])
     return writer
 
 if __name__ == "__main__":
