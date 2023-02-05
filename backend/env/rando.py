@@ -1,5 +1,15 @@
+import pandas as pd
 import csv
 import random
+def parse_file():
+    df = pd.read_csv('datas.csv', skiprows=1)
+    #print(df)
+
+def parse_text():
+
+    textFile = pd.read_csv('random_names.txt')
+    arr = textFile.to_numpy()
+    print(arr)
 
 def main():
     with open('companies.csv', 'w', newline='') as file:
@@ -11,3 +21,4 @@ def main():
 
 if __name__ == "__main__":
     main()
+parse_text()
