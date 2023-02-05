@@ -29,7 +29,7 @@ function App() {
     <div className="App">
         {/* new line start*/}
         <p>To get your profile details: </p><button onClick={getData}>Click me</button>
-        {profileData && <div>
+        {companyName && <div>
               <p>Company name: {companyName.company_name}</p>
               <p>Men's Average Salary: {companyName.men_salary}</p>
               <p>Women's Average Salary: {companyName.women_salary}</p>
